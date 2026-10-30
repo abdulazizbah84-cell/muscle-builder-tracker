@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10251e">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>30-Day Muscle Builder</title>
+<style>
+:root{--bg:#f3f6f2;--card:#fff;--ink:#17251f;--muted:#66736c;--green:#176b48;--green2:#dff2e7;--line:#e2e9e3;--gold:#f4c66a;--shadow:0 10px 28px rgba(20,50,35,.07)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+header{background:#10251e;color:#fff;padding:28px 18px 34px;border-radius:0 0 26px 26px}
+.wrap{max-width:760px;margin:auto;padding:0 16px}
+.kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#a9d7bc;font-weight:800}
+h1{font-size:clamp(27px,6vw,39px);line-height:1.08;margin:9px 0}
+header p{color:#d0ded5;margin:8px 0 0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:20px}
+.stat{background:#203a2e;border:1px solid #385447;padding:12px;border-radius:14px}
+.stat b{display:block;font-size:22px}.stat span{font-size:11px;color:#c0d2c7;text-transform:uppercase;letter-spacing:.06em}
+main{padding:20px 0 48px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:17px;margin:13px 0;box-shadow:var(--shadow)}
+h2{font-size:19px;margin:0 0 12px}h3{font-size:16px;margin:0 0 5px}
+.muted{color:var(--muted);font-size:13px}.pill{display:inline-block;background:var(--green2);color:var(--green);font-size:11px;font-weight:800;padding:4px 9px;border-radius:99px}
+.exercise{display:grid;grid-template-columns:44px 1fr;gap:12px;padding:13px 0;border-top:1px solid var(--line)}
+.exercise:first-of-type{border-top:0}.num{width:40px;height:40px;border-radius:12px;background:var(--green2);color:var(--green);display:grid;place-items:center;font-weight:900}
+.exercise p{margin:2px 0 0;color:var(--muted);font-size:13px}
+.days{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.day{border:1px solid var(--line);border-radius:13px;padding:12px;background:#fff}
+.day strong{display:block}.day small{color:var(--muted)}
+.weekrow{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}
+button,select{font:inherit}button{border:0;border-radius:12px;padding:11px 14px;background:var(--green);color:#fff;font-weight:750;cursor:pointer}
+button.secondary{background:#edf2ee;color:var(--ink);border:1px solid var(--line)}
+button.active{background:var(--green);color:white}
+.weekbtn{flex:1;min-width:65px}
+.progressbar{height:10px;background:#e8eee9;border-radius:99px;overflow:hidden;margin:9px 0}
+.progressbar span{display:block;height:100%;width:0;background:var(--green);transition:width .2s}
+.session{border:1px solid var(--line);border-radius:14px;padding:13px;margin:10px 0}
+.sessionhead{display:flex;justify-content:space-between;gap:10px;align-items:center}
+.task{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-top:1px solid var(--line)}
+.task input{width:20px;height:20px;accent-color:var(--green);margin-top:2px}
+.task label{flex:1}.task small{display:block;color:var(--muted);font-size:12px}
+input[type=text],textarea{width:100%;padding:11px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fff;color:var(--ink)}
+textarea{min-height:65px;resize:vertical}
+.note{background:#fff8e8;border:1px solid #f1dfb7;border-radius:13px;padding:12px;font-size:13px;color:#634b1c}
+.footer{font-size:12px;color:var(--muted);text-align:center;padding:15px}
+@media(max-width:430px){.stats{gap:6px}.stat{padding:10px}.stat b{font-size:19px}.card{padding:14px}.days{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="kicker">Your personal training log</div>
+<h1>30-Day Muscle Builder</h1>
+<p>Four exercises. Four training days each week. Keep it simple and show up.</p>
+<div class="stats">
+<div class="stat"><b>21</b><span>Age</span></div>
+<div class="stat"><b>51 kg</b><span>Current weight</span></div>
+<div class="stat"><b>10</b><span>Push-ups now</span></div>
+</div>
+</div></header>
+<main class="wrap">
+<section class="card">
+<h2>Your four exercises</h2>
+<div class="exercise"><div class="num">01</div><div><h3>Push-ups</h3><span class="pill">Chest · shoulders · triceps</span><p>Keep your body straight; lower under control. Use a comfortable range and stop before form breaks.</p></div></div>
+<div class="exercise"><div class="num">02</div><div><h3>Prone pulls</h3><span class="pill">Upper back · rear shoulders</span><p>Lie face down, reach arms forward, then draw elbows toward your ribs and squeeze shoulder blades. This is a low-resistance option, not a full replacement for rows.</p></div></div>
+<div class="exercise"><div class="num">03</div><div><h3>Bodyweight squats</h3><span class="pill">Thighs · glutes</span><p>Sit hips down and back, keep feet planted, then stand smoothly.</p></div></div>
+<div class="exercise"><div class="num">04</div><div><h3>Glute bridges</h3><span class="pill">Glutes · hamstrings</span><p>Lie on your back, knees bent; lift hips by squeezing glutes, pause, then lower slowly.</p></div></div>
+<p class="muted">Warm up for 5 minutes. Rest 60–120 seconds between sets. Leave about 1–2 good reps in reserve.</p>
+</section>
+
+<section class="card">
+<h2>Weekly schedule</h2>
+<div class="days">
+<div class="day"><strong>Monday</strong><small>Upper body · Push-ups + prone pulls</small></div>
+<div class="day"><strong>Tuesday</strong><small>Lower body · Squats + glute bridges</small></div>
+<div class="day"><strong>Wednesday</strong><small>Rest and recovery</small></div>
+<div class="day"><strong>Thursday</strong><small>Upper body · Push-ups + prone pulls</small></div>
+<div class="day"><strong>Friday</strong><small>Rest and recovery</small></div>
+<div class="day"><strong>Saturday</strong><small>Lower body · Squats + glute bridges</small></div>
+<div class="day"><strong>Sunday</strong><small>Rest and recovery</small></div>
+</div>
+</section>
+
+<section class="card">
+<h2>Progression targets</h2>
+<p class="muted">Choose a week to see the targets for each exercise. These are goals, not compulsory minimums. Repeat a week if you need to.</p>
+<div class="weekrow" id="weekButtons">
+<button class="weekbtn active" data-week="0">Week 1</button><button class="weekbtn secondary" data-week="1">Week 2</button><button class="weekbtn secondary" data-week="2">Week 3</button><button class="weekbtn secondary" data-week="3">Week 4</button>
+</div>
+<div id="targets"></div>
+</section>
+
+<section class="card">
+<h2>Workout tracker</h2>
+<p class="muted">Tick each session when you finish it. Your progress saves automatically on this device/browser.</p>
+<div style="display:flex;justify-content:space-between;align-items:center"><strong id="count">0 of 16 sessions</strong><span class="pill" id="percent">0%</span></div>
+<div class="progressbar"><span id="bar"></span></div>
+<div id="sessions"></div>
+</section>
+
+<section class="card">
+<h2>Weekly weigh-in & notes</h2>
+<p class="muted">Weigh yourself once a week under similar conditions. Optional: record how you felt or your best push-up set.</p>
+<div id="weighins"></div>
+<label for="notes"><strong>Training notes</strong></label>
+<textarea id="notes" placeholder="How did training feel? Any progress or discomfort?"></textarea>
+<p class="muted" id="savedMsg" aria-live="polite">Changes save automatically.</p>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+<button class="secondary" id="export">Export my log</button>
+<button class="secondary" id="reset">Reset all progress</button>
+</div>
+</section>
+<div class="note"><strong>Muscle-growth reminder:</strong> Eat enough overall, include protein in meals, and aim for 7–9 hours of sleep. At 51 kg, around 80–100 g protein daily is a reasonable optional target if affordable. Bodyweight prone pulls provide limited back resistance; a safe loaded backpack or resistance band later would improve back training.</div>
+<div class="footer">Your data stays in this browser on this device. Export a backup before clearing browser data or changing devices.</div>
+</main>
+<script>
+const plan = [
+ {name:"Push-ups",sets:[3,3,3,4],reps:[8,9,10,10]},
+ {name:"Prone pulls",sets:[3,3,4,4],reps:[12,15,12,15]},
+ {name:"Squats",sets:[3,3,4,4],reps:[15,18,15,20]},
+ {name:"Glute bridges",sets:[3,3,4,4],reps:[15,18,15,20]}
+];
+const schedule = [
+ {day:"Monday",type:"Upper body",ids:[0,1]},
+ {day:"Tuesday",type:"Lower body",ids:[2,3]},
+ {day:"Thursday",type:"Upper body",ids:[0,1]},
+ {day:"Saturday",type:"Lower body",ids:[2,3]}
+];
+const key="muscleBuilder30_v1";
+let state={checks:{},weights:{},notes:""};
+try{state={...state,...JSON.parse(localStorage.getItem(key)||"{}")}}catch(e){}
+let selectedWeek=0;
+function save(){localStorage.setItem(key,JSON.stringify(state));document.getElementById("savedMsg").textContent="Saved automatically on this device."}
+function renderTargets(){
+ document.querySelectorAll("[data-week]").forEach(b=>{const on=+b.dataset.week===selectedWeek;b.classList.toggle("active",on);b.classList.toggle("secondary",!on)});
+ document.getElementById("targets").innerHTML=plan.map(p=>`<div class="task"><label><strong>${p.name}</strong><small>${p.sets[selectedWeek]} sets × ${p.reps[selectedWeek]} reps${p.name==="Prone pulls"?" (controlled reps)":""}</small></label></div>`).join("");
+}
+function renderSessions(){
+ const root=document.getElementById("sessions");root.innerHTML="";
+ for(let w=0;w<4;w++){
+  const box=document.createElement("div");box.className="session";
+  box.innerHTML=`<div class="sessionhead"><strong>Week ${w+1}</strong><span class="pill" id="wk${w}">0/4 done</span></div>`;
+  schedule.forEach((s,i)=>{
+   const id=`w${w}s${i}`,checked=!!state.checks[id];
+   const names=s.ids.map(n=>`${plan[n].name}: ${plan[n].sets[w]} × ${plan[n].reps[w]}`).join(" + ");
+   const row=document.createElement("div");row.className="task";
+   row.innerHTML=`<input type="checkbox" id="${id}" ${checked?"checked":""}><label for="${id}"><strong>${s.day} — ${s.type}</strong><small>${names}</small></label>`;
+   row.querySelector("input").addEventListener("change",e=>{state.checks[id]=e.target.checked;save();updateProgress()});
+   box.appendChild(row);
+  });
+  root.appendChild(box);
+ }
+ updateProgress();
+}
+function updateProgress(){
+ let total=0;for(let w=0;w<4;w++){let n=0;for(let s=0;s<4;s++){if(state.checks[`w${w}s${s}`])n++}total+=n;const el=document.getElementById(`wk${w}`);if(el)el.textContent=`${n}/4 done`}
+ document.getElementById("count").textContent=`${total} of 16 sessions`;
+ document.getElementById("percent").textContent=`${Math.round(total/16*100)}%`;
+ document.getElementById("bar").style.width=`${total/16*100}%`;
+}
+function renderWeights(){
+ const root=document.getElementById("weighins");
+ root.innerHTML=[0,1,2,3].map(w=>`<div style="margin:10px 0"><label for="weight${w}"><strong>Week ${w+1} weight (kg)</strong></label><input type="text" inputmode="decimal" id="weight${w}" placeholder="e.g. 51.2" value="${state.weights[w]||""}"></div>`).join("");
+ [0,1,2,3].forEach(w=>document.getElementById(`weight${w}`).addEventListener("input",e=>{state.weights[w]=e.target.value;save()}));
+}
+document.querySelectorAll("[data-week]").forEach(b=>b.addEventListener("click",()=>{selectedWeek=+b.dataset.week;renderTargets()}));
+document.getElementById("notes").value=state.notes||"";
+document.getElementById("notes").addEventListener("input",e=>{state.notes=e.target.value;save()});
+document.getElementById("export").addEventListener("click",()=>{
+ const blob=new Blob([JSON.stringify(state,null,2)],{type:"application/json"});
+ const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="my-muscle-building-progress.json";a.click();URL.revokeObjectURL(url);
+});
+document.getElementById("reset").addEventListener("click",()=>{
+ if(confirm("Reset all workout check-offs, weigh-ins and notes? This cannot be undone.")){state={checks:{},weights:{},notes:""};save();document.getElementById("notes").value="";renderSessions();renderWeights()}
+});
+renderTargets();renderSessions();renderWeights();
+</script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js").catch(err => console.log("Offline setup unavailable:", err));
+  });
+}
+</script>
+</body>
+</html>
